@@ -7,19 +7,20 @@ namespace ShipIt_Ellis
     {
         public static void Menu(Shipper Warehouse)
         {
-            for(int i = 0;i < 8; i++) // this means while i is "__", do the loop? Do I even need anything inside the parentheses then?
-                // not checking for value right? or is that what the "option" is
+            int loop = 1;
+            while(loop == 1)
             {
                 Console.Clear();
                 Console.WriteLine("Please select an option: ");
                 Console.WriteLine("------------------------------------------");
-                Display("1", "Add a bicycle to the shipment.");
-                Display("2", "Add a lawn mower to the shipment.");
-                Display("3", "Add a baseball glove to the shipment.");
-                Display("4", "Add crackers to the shipment.");
-                Display("5", "View list of shipping items.");
-                Display("6", "Display total shipping cost of items.");
-                Display("7", "Exit program.");
+                Display("1", "Add a bicycle to the shipment");
+                Display("2", "Add a lawn mower to the shipment");
+                Display("3", "Add a baseball glove to the shipment");
+                Display("4", "Add crackers to the shipment");
+                Display("5", "View list of shipping items");
+                Display("6", "Display total shipping cost of items");
+                Display("7", "Exit program");
+                Console.WriteLine();
 
                 string option = Console.ReadLine();
 
@@ -28,7 +29,9 @@ namespace ShipIt_Ellis
                     // add bicycle
                     Bicycle newBicycle = new Bicycle();
                     Warehouse.Add(newBicycle);
-                    Console.WriteLine("Bicycle was added.");
+                    Console.Clear();
+                    Console.WriteLine("Bicycle was added");
+                    Console.WriteLine();
                     Console.WriteLine("Please press any key to continue...");
                     Console.ReadKey();
                     Console.Clear();
@@ -38,40 +41,66 @@ namespace ShipIt_Ellis
                     // add lawn mower
                     LawnMower newLawnMower = new LawnMower();
                     Warehouse.Add(newLawnMower);
+                    Console.Clear();
+                    Console.WriteLine("Lawn Mower was added");
+                    Console.WriteLine();
+                    Console.WriteLine("Please press any key to continue...");
+                    Console.ReadKey();
+                    Console.Clear();
                 }
                 else if (option == "3")
                 {
                     // add baseball glove
                     BaseballGlove newBaseballGlove = new BaseballGlove();
                     Warehouse.Add(newBaseballGlove);
+                    Console.Clear();
+                    Console.WriteLine("Baseball glove was added");
+                    Console.WriteLine();
+                    Console.WriteLine("Please press any key to continue...");
+                    Console.ReadKey();
+                    Console.Clear();
                 }
                 else if (option == "4")
                 {
                     // add crackers
                     Crackers newCrackers = new Crackers();
                     Warehouse.Add(newCrackers);
+                    Console.Clear();
+                    Console.WriteLine("Crackers were added");
+                    Console.WriteLine();
+                    Console.WriteLine("Please press any key to continue...");
+                    Console.ReadKey();
+                    Console.Clear();
                 }
                 else if (option == "5")
                 {
-                    // display list of items
-                    foreach (var newItem in Inventory) // "Inventory does not exist in current context"
-                    {
-                        Console.WriteLine(newItem);
-                    }
-                    // a way to display the sum of each item instead of a list of all
+                    // display list of items in shipment
+                    Console.Clear();
+                    Warehouse.List();
+                    Console.WriteLine("Please press any key to continue...");
+                    Console.ReadKey();
+                    Console.Clear();
                 }
                 else if (option == "6")
                 {
                     // display total shipping cost
-                    decimal shippingTotal = Warehouse.ComputeCosts(); // "ShipCost does not exist in current context"
-                    Console.WriteLine("The total shipping cost for this order is: " + shippingTotal); // do I need to use "M" here for rounding?
+                    Console.Clear();
+                    decimal shippingTotal = Warehouse.ComputeCosts();
+                    Console.WriteLine("The total shipping cost for this order is: $" + shippingTotal);
+                    Console.WriteLine();
+                    Console.WriteLine("Please press any key to continue...");
+                    Console.ReadKey();
+                    Console.Clear();
                 }
                 else if (option == "7")
                 {
-                    break;
+                    // end program
+                    Console.WriteLine();
+                    loop = 0;
                 }
                 else
                 {
+                    // default
                     Console.WriteLine("Error, please choose a valid option...");
                     Thread.Sleep(2000);
                 }
