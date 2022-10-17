@@ -40,25 +40,44 @@ namespace ShipIt_Ellis
             if (bicycleCount == 1)
             {
                 Console.WriteLine(bicycleCount + " Bicycle");
-            }else
+            }
+            else if (bicycleCount > 1)
             {
                 Console.WriteLine(bicycleCount + " Bicycles");
             }
+            else if (bicycleCount == 0)
+            {
+            }
+
             if (lawnMowerCount == 1)
             {
                 Console.WriteLine(lawnMowerCount + " Lawn Mower");
-            }else
+            }
+            else if (lawnMowerCount == 0)
+            {
+            }
+            else if (lawnMowerCount > 1)
             {
                 Console.WriteLine(lawnMowerCount + " Lawn Mowers");
             }
+
             if (baseBallGloveCount == 1)
             {
                 Console.WriteLine(baseBallGloveCount + " Baseball Glove");
-            }else
+            }
+            else if (baseBallGloveCount == 0)
+            {
+            }
+            else if (baseBallGloveCount > 1)
             {
                 Console.WriteLine(baseBallGloveCount + " Baseball Gloves");
             }
-            Console.WriteLine(crackersCount + " Crackers");
+
+            if (crackersCount != 0)
+            {
+                Console.WriteLine(crackersCount + " Crackers");
+            }
+
             Console.WriteLine();
         }
 
