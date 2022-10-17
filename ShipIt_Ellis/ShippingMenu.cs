@@ -32,7 +32,6 @@ namespace ShipIt_Ellis
                     Console.WriteLine("Please press any key to continue...");
                     Console.ReadKey();
                     Console.Clear();
-                    // for plurality: if (newBicycle >= 1) { Console.WriteLine("Bicycles"); } else () { Console.WriteLine("Bicycle");
                 }
                 else if (option == "2")
                 {
@@ -64,8 +63,8 @@ namespace ShipIt_Ellis
                 else if (option == "6")
                 {
                     // display total shipping cost
-                    double listTotal = Inventory.Sum(newItem => ShipCost); // "ShipCost does not exist in current context"
-                    Console.WriteLine("The total shipping cost for this order is: " + listTotal); // do I need to use "M" here for rounding?
+                    decimal shippingTotal = Warehouse.ComputeCosts(); // "ShipCost does not exist in current context"
+                    Console.WriteLine("The total shipping cost for this order is: " + shippingTotal); // do I need to use "M" here for rounding?
                 }
                 else if (option == "7")
                 {

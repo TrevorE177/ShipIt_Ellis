@@ -11,9 +11,25 @@ namespace ShipIt_Ellis
          List<IShippable> Inventory = new List<IShippable>();
          public void Add(IShippable newItem)
          {
-             newItem = Product; // Why does this not receive the name from the "item" classes through the interface?
              Inventory.Add(newItem);
+
          }
+
+        public string List() // end result: create a string to return in ShippingMenu
+        {
+            foreach (IShippable item in Inventory)
+            {
+                item.Product
+            }
+        }
+
+        public decimal ComputeCosts() // End Result: Create a string to return in ShippingMenu
+        {
+            foreach (IShippable item in Inventory)
+            {
+                item.ShipCost
+            }
+        }
     }
 }
 
