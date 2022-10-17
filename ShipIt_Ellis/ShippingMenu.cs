@@ -55,16 +55,17 @@ namespace ShipIt_Ellis
                 else if (option == "5")
                 {
                     // display list of items
-                    foreach (var newItem in Inventory)
+                    foreach (var newItem in Inventory) // "Inventory does not exist in current context"
                     {
                         Console.WriteLine(newItem);
                     }
+                    // a way to display the sum of each item instead of a list of all
                 }
                 else if (option == "6")
                 {
-                    // display total shipping cost and list of items
-                    double listTotal = Inventory.Sum(newItem => ShipCost); // Can't see the class variables either???
-                    Console.WriteLine(listTotal);
+                    // display total shipping cost
+                    double listTotal = Inventory.Sum(newItem => ShipCost); // "ShipCost does not exist in current context"
+                    Console.WriteLine("The total shipping cost for this order is: " + listTotal); // do I need to use "M" here for rounding?
                 }
                 else if (option == "7")
                 {
